@@ -23,17 +23,16 @@
  * <code>false</code> otherwise.
  */
 int isKaprekar(int n) {
-
-  if(n < 1) {
-    return false;
-  }
-
   int i;
   long square = n * (long) n;
   int numDigits = (int) log10(n) + 1;
   long modulus = 0;
   long first, second;
-
+  
+  if(n < 1) {
+    return 0;
+  }
+  
   //for each possible "split" of the square...
   for(i=1; i<=numberOfDigits; i++) {
     //increase the modulus by a factor of 10
